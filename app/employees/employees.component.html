@@ -1,0 +1,34 @@
+<div>
+	<h1>{{title}}</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Phone</td>
+				<td>Email</td>
+				<td>Created Date</td>
+				<td class="text-right">
+					<button (click)="goToAdd()" class="btn btn-primary btn-sm">
+						<span class="glyphicon glyphicon-plus"></span>
+					</button>
+				</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="#employee of employees">
+				<td>{{employee.lastName}}, {{employee.firstName}}</td>
+				<td>{{employee.phone}}</td>
+				<td>{{employee.email}}</td>
+				<td>{{employee.createDate}}</td>
+				<td class="text-right">
+					<button (click)="goToEdit(employee.id)" class="btn btn-success btn-sm">
+						<span class="glyphicon glyphicon-pencil"></span>
+					</button>
+					<button (click)="deleteEmployee(employee)" class="btn btn-danger btn-sm">
+						<span class="glyphicon glyphicon-remove"></span>
+					</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
