@@ -1,2 +1,8 @@
 *.js
+!karma.conf.js
+!karma-test-shim.js
 *.map
+**/.DS_Store
+.DS_Store
+node_modules/
+typings/
