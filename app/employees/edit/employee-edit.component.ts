@@ -1,7 +1,10 @@
-import {Component, OnInit} from 'angular2/core';
-import {Employee} from '../models/employee';
-import {Router, RouteParams} from 'angular2/router';
-import {EmployeeService} from '../services/employee.service';
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { Employee } from '../models/employee';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import { EmployeeService } from '../services/employee.service';
+
+import { Observable } from 'rxjs/Observable';
 
 @Component({
 	selector: 'employee-detail',
@@ -13,18 +16,18 @@ export class EmployeeEditComponent implements OnInit {
 
 	constructor(
 		private _employeeService: EmployeeService,
-		private _routeParams: RouteParams,
-		private _router: Router
-	) {}
+		private _route: ActivatedRoute,
+		private _location: Location
+	) { }
 
 	ngOnInit() {
-		let id = +this._routeParams.get('id');
-
-		this._employeeService.getEmployee(id)
-			.then(employee => this.employee = employee);
+		this._route.params.subscribe(params => {
+			this._employeeService.getEmployee(+params['id'])
+				.then(employee => this.employee = employee);
+		});
 	}
 
-	backToDirectory(event) {
-		this._router.navigate(['Employees']);
+	backToDirectory(event: any) {
+		this._location.back();
 	}
 }

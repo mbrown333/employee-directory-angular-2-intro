@@ -1,11 +1,10 @@
-import {Component, OnInit} from 'angular2/core';
-import {Employee} from './models/employee';
-import {EmployeeService} from './services/employee.service'
-import {Router} from 'angular2/router';
+import { Component, OnInit } from '@angular/core';
+import { Employee } from './models/employee';
+import { EmployeeService } from './services/employee.service'
+import { Router } from '@angular/router';
 
 @Component({
-	templateUrl: 'app/employees/employees.component.html',
-	directives: []
+	templateUrl: 'app/employees/employees.component.html'
 })
 
 export class EmployeesComponent implements OnInit {
@@ -15,7 +14,7 @@ export class EmployeesComponent implements OnInit {
 	constructor(
 		private _employeeService: EmployeeService,
 		private _router: Router
-	) {}
+	) { }
 
 	getEmployees() {
 		this._employeeService.getEmployees()
@@ -31,10 +30,10 @@ export class EmployeesComponent implements OnInit {
 	}
 
 	goToEdit(id: number) {
-		this._router.navigate(['Edit', { id: id }]);
+		this._router.navigate(['/edit/' + id ]);
 	}
 
 	goToAdd() {
-		this._router.navigate(['Add']);
+		this._router.navigate(['/add']);
 	}
 }

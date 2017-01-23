@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="#employee of employees">
+			<tr *ngFor="let employee of employees">
 				<td>{{employee.lastName}}, {{employee.firstName}}</td>
 				<td>{{employee.phone}}</td>
 				<td>{{employee.email}}</td>

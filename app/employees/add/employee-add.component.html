@@ -2,20 +2,21 @@
 <form class="col-sm-5">
 	<div class="form-group">
 		<label for="first-name">First Name</label>
-		<input [(ngModel)]="newEmployee.firstName" type="text" class="form-control" id="first-name" placeholder="First Name">
+		<input [(ngModel)]="newEmployee.firstName" type="text" class="form-control" name="first-name" id="first-name" placeholder="First Name">
 	</div>
 	<div class="form-group">
 		<label for="last-name">Last Name</label>
-		<input [(ngModel)]="newEmployee.lastName" type="text" class="form-control" id="last-name" placeholder="Last Name">
+		<input [(ngModel)]="newEmployee.lastName" type="text" class="form-control" name="last-name" id="last-name" placeholder="Last Name">
 	</div>
 	<div class="form-group">
 		<label for="email">Email</label>
-		<input [(ngModel)]="newEmployee.email" type="text" class="form-control" id="email" placeholder="Email">
+		<input [(ngModel)]="newEmployee.email" type="text" class="form-control" name="email" id="email" placeholder="Email">
 	</div>
 	<div class="form-group">
 		<label for="phone">Phone</label>
-		<input [(ngModel)]="newEmployee.phone" type="text" class="form-control" id="phone" placeholder="Phone">
+		<input [(ngModel)]="newEmployee.phone" type="text" class="form-control" name="phone" id="phone" placeholder="Phone">
 	</div>
+
 	<button (click)="saveEmployee()" type="button" class="btn btn-default">Save</button>
 	<button (click)="cancelAdd()" type="button" class="btn btn-danger">Cancel</button>
 </form>

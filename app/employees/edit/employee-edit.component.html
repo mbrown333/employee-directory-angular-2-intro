@@ -3,12 +3,12 @@
 
 	<form class="col-sm-4">
 		<div class="form-group">
-			<label for="exampleInputEmail">Email</label>
-			<input [(ngModel)]="employee.email" class="form-control" id="exampleInputEmail">
+			<label for="email">Email</label>
+			<input type="text" [(ngModel)]="employee.email" name="email" class="form-control" id="email">
 		</div>
 		<div class="form-group">
-			<label for="exampleInputPhone">Phone</label>
-			<input [(ngModel)]="employee.phone" class="form-control" id="exampleInputPhone">
+			<label for="phone">Phone</label>
+			<input type="text" [(ngModel)]="employee.phone" name="phone" class="form-control" id="phone">
 		</div>
 
 		<button (click)="backToDirectory()" class="btn btn-default" type="button">Done</button>
